@@ -3,6 +3,16 @@
 -- ⚠️ Требует загрузки Part 1, Part 2 и Part 3 перед этим файлом
 
 -- ========================================
+-- SERVICES (для этой части)
+-- ========================================
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+
+-- ========================================
 -- ВАЖНАЯ ИНСТРУКЦИЯ ПО ЗАГРУЗКЕ
 -- ========================================
 --[[
@@ -37,6 +47,27 @@
 -- ========================================
 -- GUI СОЗДАНИЕ (финальная часть)
 -- ========================================
+
+-- Получаем существующие переменные из предыдущих частей
+local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+
+-- Проверяем, что базовые функции загружены
+if not getgenv().settings then
+    warn("❌ Part 1 не загружен! Загрузите Part 1 сначала.")
+    return
+end
+
+if not PilotStand or not UnPilotStand then
+    warn("❌ Part 2 не загружен! Загрузите Part 2 сначала.")
+    return
+end
+
+if not stopAllAnimations then
+    warn("❌ Part 3 не загружен! Загрузите Part 3 сначала.")
+    return
+end
 
 -- Эта часть содержит полное создание всех GUI страниц
 -- Из-за ограничения размера, здесь представлена упрощенная версия
