@@ -177,6 +177,14 @@ local function SearchPlayer(Name)
     return ClosestMatch
 end
 
+-- Делаем функции глобальными для других частей
+getgenv().PilotStand = PilotStand
+getgenv().UnPilotStand = UnPilotStand
+getgenv().EnablePilot = EnablePilot
+getgenv().DisablePilot = DisablePilot
+getgenv().GetStand = GetStand
+getgenv().SearchPlayer = SearchPlayer
+
 -- Invisibility Variables
 local Highlight = nil
 local UndergroundAnimation = nil
