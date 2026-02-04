@@ -109,6 +109,11 @@ local function Uninvisible()
     end
 end
 
+-- Делаем функции глобальными для Part 4
+getgenv().Invisibile = Invisibile
+getgenv().Uninvisible = Uninvisible
+getgenv().stopAllAnimations = stopAllAnimations
+
 -- ========================================
 -- GUI FRAMEWORK (создание элементов интерфейса)
 -- Эти функции необходимы для создания всех страниц
